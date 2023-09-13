@@ -5,7 +5,7 @@
     <h1>Bienvenue aux personnes ci-dessous:</h1>
     <ul>
         {% for personne in personnes%}
-        <li>{{ personne}}</li>
+        <li><a href="{{ path('app_bienvenue_prenom',{"prenom":personne}) }}">{{personne}}</a></li>
         {% endfor %}
     </ul>
 {% endblock %}
