@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}liste étudiants{% endblock %}
+
+{% block body %}
+    <h1>{{ etudiant.prenom }}</h1>
+    <ul>
+       <li>{{ etudiant.prenom }}</li>
+       <li>{{ etudiant.nom }}</li>
+       <li>{{ etudiant.email }}</li>
+       <li>{{ etudiant.dateNaissance.format("d/m/Y") }}</li>
+       <li>Age: {{ etudiant.age}} ans</li>
+
+    </ul>
+
+{% endblock %}

@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\EtudiantRepository;
+use Cassandra\Date;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -77,5 +78,10 @@ class Etudiant
         $this->dateNaissance = $dateNaissance;
 
         return $this;
+    }
+    public function getAge():int{
+        $dateJour=new \DateTime();
+        $interval=$this->dateNaissance->diff($dateJour);
+        return $interval->y;
     }
 }
