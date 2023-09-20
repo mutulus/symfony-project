@@ -26,8 +26,8 @@ class EtudiantController extends AbstractController
     {
         $etudiant = $etudiantRepository->find($id);
         $age = $etudiant->getAge();
-
-        return $this->render('etudiant/show.html.twig', ["etudiant" => $etudiant, "age" => $age]
+        $promotion=$etudiant->getPromotion()->getLibelle();
+        return $this->render('etudiant/show.html.twig', ["etudiant" => $etudiant, "age" => $age,"promotion"=>$promotion]
         );
     }
     #[Route('//etudiants/mineurs', name: 'app_etudiant_mineurs_list')]
